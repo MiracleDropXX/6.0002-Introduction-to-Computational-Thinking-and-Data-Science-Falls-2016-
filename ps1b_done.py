@@ -27,8 +27,6 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
         result = memo[(target_weight, egg_weights)]
     elif target_weight == 0 :
         result = 0
-    elif target_weight == 1:
-        result = 1
     else:
         eligible_eggs = tuple(weight for weight in egg_weights if weight <= target_weight)  # Tuple of eligible weights
         exploratory_result = []
@@ -44,13 +42,15 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
 
 
 
+
 # EXAMPLE TESTING CODE, feel free to add more if you'd like
 if __name__ == '__main__':
-    egg_weights = (1, 2, 3, 4, 9, 25)
-    n = 99
-    print("Egg weights = (1, 5, 10, 25)")
-    print("n = 99")
-    print("Expected ouput: 9 (3 * 25 + 2 * 10 + 4 * 1 = 99)")
+    egg_weights = (1, 2, 3, 4, 7, 33)
+    n = 75
+    print(f"Egg weights = {egg_weights}")
+    print(f"n = {n} \n")
+    
     print("Actual output:", dp_make_weight(egg_weights, n))
     print()
+    
     
