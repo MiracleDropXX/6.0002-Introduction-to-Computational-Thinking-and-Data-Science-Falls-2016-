@@ -164,14 +164,20 @@ def compare_cow_transport_algorithms():
 
 
 ### testing 
-ps1_cow_dict = load_cows('ps1_cow_data.txt')
-ps1_trip_greedy, n_trip_greedy = greedy_cow_transport(cows = ps1_cow_dict, limit = 10)
-print(ps1_trip_greedy, n_trip_greedy)
-ps1_trip_bruteforce, n_trip_brute_force = brute_force_cow_transport(cows = ps1_cow_dict, limit = 10)
-print(ps1_trip_bruteforce, n_trip_brute_force)
+if __name__ == '__main__':
+    print("I load all cows from farm 1 \n")
+    ps1_cow_dict = load_cows('ps1_cow_data.txt')
+    print("I transport them with greedy algorithm \n")
+    ps1_trip_greedy, n_trip_greedy = greedy_cow_transport(cows = ps1_cow_dict, limit = 10)
+   
+    print(f'Greedy transport detail: {ps1_trip_greedy} in minimum number of trip: {n_trip_greedy} \n')
+    
+    print("I transport them with brute force algorithm \n")
+    ps1_trip_bruteforce, n_trip_brute_force = brute_force_cow_transport(cows = ps1_cow_dict, limit = 10)
+    print(f'Brute force transport detail: {ps1_trip_bruteforce} in minimum number of trip: {n_trip_brute_force}')
 
-compare_cow_transport_algorithms()
-
+    compare_cow_transport_algorithms()
+    time 
 
 # Problem A.5: Writeup
 # Answer the following questions in a PDF file called ps1_answers.pdf.
